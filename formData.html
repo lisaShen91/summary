@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>上传文件（FormData）</title>
+</head>
+
+<body>
+    <div>12314</div>
+    <div id="wrapper">
+        <input type="file" id="test" accept="image/*" multiple onchange="preview()">
+    </div>
+</body>
+<script>
+    let ele = document.querySelector('#test');
+    let wrapper = document.querySelector('#wrapper');
+
+    function preview() {
+        let frag = document.createDocumentFragment();
+        let fd = new FormData();
+        for (let i = 0; i < ele.files.length; i++) {
+            let file = ele.files[i];
+            let path = URL.createObjectURL(file); //读取文件
+            let img = document.createElement('img');   
+            img.width = 100;
+            img.height = 100;
+            img.src = path;
+            wrapper.appendChild(img);
+            fd.append('upload', file, 'zh');
+        }
+        wrapper.appendChild(frag);
+    }
+</script>
+
+</html>

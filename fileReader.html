@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>上传文件（FileReader）</title>
+</head>
+
+<body>
+    <div>12314</div>
+    <div id="wrapper">
+        <input type="file" id="test" accept="image/*" multiple onchange="preview()">
+    </div>
+</body>
+<script>
+    let ele = document.querySelector('#test');
+    let wrapper = document.querySelector('#wrapper');
+    function preview() {
+        let frag = document.createDocumentFragment();
+        for (let i = 0; i < ele.files.length; i++) {
+            let fr = new FileReader();
+            let file = ele.files[i];
+            let img = document.createElement('img');   //读取文件
+            img.width = 100;
+            img.height = 100;
+            fr.readAsDataURL(file);
+            fr.onload = function (e) {
+                img.src = e.target.result;
+                wrapper.appendChild(img);
+            }
+        }
+        wrapper.appendChild(frag)
+    }
+</script>
+
+</html>
