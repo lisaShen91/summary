@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>demo</title>
+    </head>
+    <body>
+        <div id="app"></div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script >
+            Vue.component('base-input', {
+                props: ['label', 'value', 'name', 'age'],
+                methods: {
+                    updateName(e) {
+                        this.$emit('update:name', e.target.value);
+                    },
+                    updateVal(e) {
+                        this.$emit('update:age', e.target.value);
+                    },
+                },
+                template: `
+                <label style="margin-top: 200px;display:block">
+        {{ label }}
+        <input :value="name" @input="updateName" />
+        <input :value="age" @input="updateVal" />
+    </label>
+              `,
+            });
+           new Vue({
+                el: '#app',
+                data: {
+                    obj: {
+                        name: 'lisa',
+                        age: 31
+                    }
+                },
+                template: `<div><base-input v-bind.sync="obj"></base-input>name: {{obj.name }} age: {{ obj.age }}</div>`
+            })
+        </script>
+    </body>
+</html>

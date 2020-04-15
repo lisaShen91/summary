@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>demo</title>
+    </head>
+    <body>
+        <div id="app"></div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script>
+            Vue.component('dialog-c', {
+                model: {
+                    prop: 'show',
+                    event: 'close',
+                },
+                props: ['show'],
+                data() {
+                    return {
+                        isShown: this.show,
+                        message: '',
+                    };
+                },
+                methods: {
+                    changeShow(mesage, time) {
+                        this.isShown = true;
+                        this.message = mesage;
+                        setTimeout(() => {
+                            this.isShown = false;
+                            this.$emit('close', true);
+                            this.messge = '';
+                        }, time);
+                    },
+                    close() {
+                        this.isShown = false;
+                        this.$emit('close', false);
+                    },
+                },
+                 watch: {
+                   show(val) {
+                        this.isShown = this.show;
+                   }
+                },
+                template: `
+                    <div style="position: fixed; top: 10px; left: 50%;" v-show="isShown">
+                        <div style="display: inline-block; width: 200px; background-color: orange;">
+                            qeqrqr
+                        </div>
+                        <button @click="close">关闭</button>
+                    </div>
+                `,
+            });
+            new Vue({
+                el: '#app',
+                data: {
+                    message: '',
+                    show: false,
+                },
+                methods: {
+                    changeShow() {
+                        // this.$refs.dialogC.show('错了', 3000);
+                        this.show = true;
+                    },
+                },
+                watch: {
+                   show(val) {
+                       console.log(val)
+                   }
+                },
+                template: `<div>
+                    <button @click="changeShow">显示提示</button>
+                    <dialog-c ref="dialogC" v-model="show"></dialog-c>
+                </div>`,
+            });
+        </script>
+    </body>
+</html>
