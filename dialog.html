@@ -35,10 +35,10 @@
                         this.$emit('close', false);
                     },
                 },
-                 watch: {
-                   show(val) {
+                watch: {
+                    show(val) {
                         this.isShown = this.show;
-                   }
+                    },
                 },
                 template: `
                     <div style="position: fixed; top: 10px; left: 50%;" v-show="isShown">
@@ -62,9 +62,9 @@
                     },
                 },
                 watch: {
-                   show(val) {
-                       console.log(val)
-                   }
+                    show(val) {
+                        console.log(val);
+                    },
                 },
                 template: `<div>
                     <button @click="changeShow">显示提示</button>
