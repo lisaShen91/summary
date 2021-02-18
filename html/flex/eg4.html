@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>flex-basis默认值</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            html, body {
+                height: 100%;
+            }
+            .container {
+                display: flex;
+                flex-flow: row wrap;
+            }
+            .item {
+                flex: 1;
+                height: 100px;
+                background-color: red;
+            }
+            .center {
+                /* flex-basis: 200px; */
+                width: 400px;
+            }
+            .left {
+                /* flex: 1; */
+                background: yellow;
+            }
+            .right {
+                /* flex: 1; */
+                background: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <p>flex-basis:划分剩余空间前的参考值，需要减去这个basis的值才知道剩余多少空间, flex-basis默认是auto，原本大小</p>
+        <div class="container">
+            <div class="item left">1</div>
+            <div class="item center">不设置flex-basis， 设置宽度，则不缩放，展示项目本身大小</div>
+            <div class="item right">3</div>
+        </div>
+    </body>
+</html>

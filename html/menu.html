@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>demo</title>
+        <style>
+            html,
+            body {
+                background-color: yellow;
+                height: 100%;
+            }
+
+            ul {
+                list-style: none;
+            }
+            li {
+                width: 100px;
+                background-color: #fff;
+            }
+
+            .list li {
+                float: left;
+            }
+
+            .list2 li {
+                display: inline-block;
+            }
+
+            .text-ellipsis {
+                width: 100px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+            .triangle {
+                position: relative;
+                left: 10px;
+            }
+            .triangle:before {
+                content: '';
+                width: 0;
+                height: 0;
+                border: 10px solid transparent;
+                border-bottom-color: red;
+                position: absolute;
+                top: -5px;
+                left: -20px;
+            }
+            .warning {
+                position: relative;
+            }
+            .warning:before {
+                content: '!';
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                color: #fff;
+                text-align:center;
+                font-weight: bold;
+                border-radius: 50%;
+                background-color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <ul class="list">
+            <li><a>浮动不存在间隙问题</a></li>
+            <li><a>m1</a></li>
+            <li><a>m1</a></li>
+            <li><a>m1</a></li>
+        </ul>
+        <ul class="list2">
+            <li><a>inline-block 会产生横向间隙</a></li>
+            <li><a>m1</a></li>
+            <li><a>m1</a></li>
+            <li><a>m1</a></li>
+        </ul>
+        <div class="text-ellipsis">溢出显示省略号</div>
+
+        <div class="triangle">伪类画三角</div>
+
+        <div class="warning">叹号</div>
+    </body>
+</html>

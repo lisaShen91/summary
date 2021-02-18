@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>flex 取值</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            html, body {
+                height: 100%;
+            }
+            .container {
+                display: flex;
+                flex-flow: row wrap;
+            }
+            .item {
+                flex: 1;
+                height: 100px;
+                background-color: red;
+            }
+            .center {
+                width: 200px;
+            }
+            .left {
+                background: yellow;
+            }
+            .right {
+                background: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item left">1</div>
+            <div class="item center">flex的值就是每个子项目占据的比例</div>
+            <div class="item right">3</div>
+        </div>
+    </body>
+</html>

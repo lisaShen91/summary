@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>浮动实现两列布局</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0
+            }
+            html, body {
+                height: 100%;
+            }
+            .l {
+                width: 100px;
+                height: 100%;
+                background: red;
+                float: left;
+            }
+            .r {
+                height: 100%;
+                background: green;
+                overflow: hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="l"></div>
+        <div class="r">right</div>
+    </body>
+</html>

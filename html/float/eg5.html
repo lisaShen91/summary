@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>清除浮动: 给父容器添加高度</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            body {
+            }
+            .left {
+                background: gold;
+                float: left;
+            }
+            .l-i {
+                height: 20px;
+            }
+            .cl {
+                height: 10px;
+            }
+            .right {
+                background: green;
+                border: 2px solid #cccc;
+                margin: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <p>加高法：给父容器设置高度。缺点：麻烦，父容器内元素会变</p>
+        <div class="outer">
+            <div class="left">我float: left;
+                <div class="l-i">我是浮动元素的子元素</div>
+            </div>
+            <div class="cl"></div>
+        </div>
+        <div class="right">我是右侧</div>
+    </body>
+</html>

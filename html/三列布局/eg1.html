@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>浮动实现三列布局</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0
+            }
+            html, body {
+                height: 100%;
+            }
+            .l {
+                width: 100px;
+                height: 100%;
+                background: red;
+                float: left;
+            }
+            .r {
+                width: 100px;
+                height: 100%;
+                background: green;
+                float: right;
+            }
+            .m {
+                display:inline-block;
+                width: calc(100% - 200px);
+                height: 100%;
+                background: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <p>左右固定，中间自适应</p>
+        <div class="l">left</div>
+        <div class="m">middle</div>
+        <div class="r">right</div>
+    </body>
+</html>

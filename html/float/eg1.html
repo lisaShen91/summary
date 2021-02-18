@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>浮动</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            body {
+                height: 300px;
+            }
+            .left {
+                background: gold;
+                /* height: 100%; */
+                float: left;
+            }
+            .right {
+                background: green;
+                height: 100%;
+                border: 2px solid #cccc;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="left">我float: left;
+            <div>我是浮动元素的子元素</div>
+        </div>
+        <div class="right">我是右侧</div>
+        <!-- <div>我是右侧</div> -->
+        <!-- <div>我是右侧</div> -->
+    </body>
+</html>

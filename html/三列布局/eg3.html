@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>浮动实现三列布局</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0
+            }
+            html, body {
+                height: 100%;
+            }
+            .outer {
+                display: flex;
+            }
+            .dir {
+                flex-basis: 100px;
+                width: 100px;
+            }
+            .l {
+                background: red;
+            }
+            .r {
+                background: green;
+            }
+            .m {
+                flex: 1;
+                background: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <p>左右固定，中间自适应</p>
+        <div class="outer">
+            <div class="dir l">left</div>
+            <div class="m">middle</div>
+            <div class="dir r">right</div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>清除浮动 clear: both</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            body {
+            }
+            .outer {
+
+            }
+            .left {
+                background: gold;
+                float: left;
+            }
+            .right {
+                background: green;
+                height: 100%;
+                border: 2px solid #cccc;
+                clear: both;
+                margin: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <p>参考文档：https://www.cnblogs.com/gchlcc/p/5824200.html</p>
+        <p>清除浮动：给浮动元素块级兄弟元素设置clear:both；缺点：margin-top失效</p>
+        <div class="outer">
+            <div class="left">我float: left;
+                <div>我是浮动元素的子元素</div>
+            </div>
+        </div>
+        <div class="right">我是右侧</div>
+    </body>
+</html>

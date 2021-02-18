@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>伪元素应用</title>
+        <style>
+            .list2 {
+                padding: 10px;
+                border: 1px solid #ccc;
+            }
+            .list2 li {
+                list-style: none;
+            }
+            .list2 ul {
+                counter-reset: subsection;
+            }
+
+            .list2 li::before {
+                counter-increment: subsection;
+                content: counters(subsection, '.') ' ';
+            }
+        </style>
+    </head>
+    <body>
+        <div class="list2">
+            <ul>
+                <li>
+                    吃了好吃的
+                    <ul>
+                        <li>content</li>
+                        <li>content</li>
+                        <li>content</li>
+                    </ul>
+                </li>
+                <li>不开心</li>
+                <li>
+                    蓝瘦香菇
+                    <ul>
+                        <li>content</li>
+                        <li>content</li>
+                        <li>content</li>
+                    </ul>
+                </li>
+                <li>滚蛋</li>
+                <li>嗯哼随心随遇把</li>
+            </ul>
+        </div>
+        <!-- <script src="./../utils.js"></script> -->
+        <script src="./../console.js"></script>
+    </div>
+    </body>
+</html>

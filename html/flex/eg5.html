@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>flex取值</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            html, body {
+                height: 100%;
+            }
+            .container {
+                display: flex;
+                flex-flow: row wrap;
+            }
+            .item {
+                height: 100px;
+                background-color: red;
+            }
+            .center {
+                /* flex-basis: 200px; */
+                width: 400px;
+            }
+            .left {
+                flex: auto;
+                background: yellow;
+            }
+            .right {
+                flex: none;
+                background: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <p>flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。
+           auto (1 1 auto) 和 none (0 0 auto)
+        </p>
+        <div class="container">
+            <div class="item left">1 flex:auto</div>
+            <div class="item center">不设置flex</div>
+            <div class="item right">flex: none</div>
+        </div>
+    </body>
+</html>

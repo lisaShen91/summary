@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>demo</title>
+        <style>
+            html, body {
+                background-color: yellow;
+                height: 100%;
+            }
+            .container {
+                display: inline-block;
+            }
+            #aa {
+                width: 100px;
+                height: 100px;
+                background-color: red;
+                border: 10px solid;
+                padding: 50px;
+            }
+            .inner {
+                float: left;
+                width: 100px;
+                height: 100px;
+                background-color: #fff;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="aa">
+            <span class="inner"></span>
+        </div>
+        <script>
+            const element = document.getElementById('aa');
+            let start;
+            let long;
+
+            function step(timestamp) {
+                if (start === undefined) start = timestamp;
+                const elapsed = timestamp - start;
+                console.log(Math.min(0.1 * elapsed, 300))
+                // `Math.min()` is used here to make sure that the element stops at exactly 200px.
+                element.style.transform = 'translateX(' + Math.min(0.1 * elapsed, 200) + 'px)';
+
+                if (elapsed < 3000) {
+                    // Stop the animation after 2 seconds
+                    long = window.requestAnimationFrame(step);
+                    // window.cancelAnimationFrame(long);
+                }
+            }
+
+            window.requestAnimationFrame(step);
+        </script>
+    </body>
+</html>

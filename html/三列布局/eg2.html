@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>绝对定位实现三列布局</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0
+            }
+            html, body {
+                height: 100%;
+            }
+            .dir {
+                width: 100px;
+                position: absolute;
+                top: 22px;
+            }
+            .l {
+                background: red;
+                left: 0;
+            }
+            .r {
+                background: green;
+                right: 0;
+            }
+            .m {
+                background: yellow;
+                margin: 0 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <p>左右固定，中间自适应</p>
+        <div class="dir l">left</div>
+        <div class="m">middle</div>
+        <div class="dir r">right</div>
+    </body>
+</html>

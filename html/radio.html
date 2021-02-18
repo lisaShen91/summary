@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>获取radio的值</title>
+    </head>
+    <body>
+        <div id="div1">
+            <input type="radio" name="language" value="zh"> 中文
+            <input type="radio" name="language" value="en" checked> 英文
+        </div>
+        <button onclick="getData()">发送</button>
+        <script>
+            let els = document.querySelectorAll('[name=language]');
+            for (let i = 0; i< els.length; i++) {
+                let el = els[i];
+                el.onclick = function(e) {
+                    console.log(e.target.value);
+                }
+            }
+            function getData() {
+                let xhr = new XMLHttpRequest();
+                xhr.open('get', '/', true);
+                xhr.onreadystatechange = function(){
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        console.log(xhr.responseText);
+                    }
+                }
+                xhr.send();
+            }
+        </script>
+    </body>
+</html>

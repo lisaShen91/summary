@@ -21,7 +21,7 @@ function isArray(data) {
 }
 
 /**
- * 
+ *
  * @param {*} ary  = []
  * @param {*} orderKey 排序字段名
  * @param {*} asc 升序降序
@@ -40,7 +40,7 @@ function aOrder(ary, orderKey, isAsc = true) {
 }
 
 /**
- * @param {*} ary 
+ * @param {*} ary
  * @param {*} options {oderBy: 'name', order: 'asc'}
  */
 function orderGroup(obj, key, isAsc) {

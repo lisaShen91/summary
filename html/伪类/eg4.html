@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>伪元素画省略号</title>
+        <style>
+            html, body {
+                height: 100%;
+                padding: 0;
+                margin: 0;
+            }
+
+            .bg {
+                width: 100px;
+                height: 100px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            .multi-rows {
+                position: relative;
+                line-height: 1.4rem;
+                height: 4.2rem;
+                width: 100px;
+                overflow: hidden;
+            }
+            .multi-rows:after {
+                content: '…';
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                padding:0 20px 1px 45px;
+            }
+            .line-clamp {
+                width: 100px;
+                overflow : hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="bg">
+            单行省略单行省略单行省略单行省略单行省略单行省略
+        </div>
+        <div class="line-clamp">多行省略多行省略多行省略多行省略多行省略多行省略多行省略多行省略多行省略多行省略多行省略</div>
+        <div class="multi-rows">多行省略多行省略多行省略多行省略多行省略多行省略多行省略多行省略多行省略多行省略多行省略</div>
+    </body>
+</html>
