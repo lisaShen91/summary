@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>元素浮动-三列布局</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      .container {
+        height: 500px;
+        background: green;
+        position: absolute;
+        width: 100%;
+      }
+      .site {
+        height: 100%;
+        background: yellow;
+        display: inline-block;
+        width: calc(100% - 20px);
+      }
+      .inner {
+        background: red;
+        float: left;
+        width: 10px;
+        height: 100%;
+      }
+      .r {
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <p>用display: inline-block; 并设置高度 在右侧生成bfc</p>
+    <div class="container">
+      <span class="inner">我是left</span>
+      <div class="site">定位</div>
+      <span class="inner r">我是right</span>
+    </div>
+  </body>
+</html>

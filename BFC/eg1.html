@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>元素浮动</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      .intro {
+        /* display: inline-block; */
+      }
+
+      .container {
+        height: 500px;
+        background: green;
+        position: relative;
+      }
+      .site {
+        position: absolute;
+      }
+      .inner {
+        background: red;
+        float: left;
+        margin: 20px;
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="intro">
+      <li>float可取值：none/left/right。</li>
+      <li>浮动元素脱离标准文档流 不占位置标准文档流的位置，</li>
+      <li>不可设置层级，默认最高展示。</li>
+      <li>位置不够会换行</li>
+      <li>浮动元素不再区分是行内元素还是块级元素，也就是说可以设置宽高</li>
+    </ul>
+    <div class="container">
+      <span class="inner"></span>
+      <div class="site">定位</div>
+    </div>
+  </body>
+</html>
